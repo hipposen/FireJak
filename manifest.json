@@ -1,10 +1,10 @@
 {
-  "name": "Chuck Norris Jokes",
-  "short_name": "ChuckNorris",
-  "start_url": "/chucknorris/index.html",
+  "name": "FireJak | Aplikasi Daftar Pos Pemadam Kebakaran di Jakarta",
+  "short_name": "FireJak",
+  "start_url": "/FireJak/index.html",
   "display": "standalone",
   "orientation": "portrait",
-  "theme_color": "#f05724",
+  "theme_color": "#ffb347",
   "background_color": "#fff",
   "icons": [
     {

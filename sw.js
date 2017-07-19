@@ -1,33 +1,32 @@
 (global => {
   'use strict';
 
-  var versionCache = '-chucknorris-20170719-11-30'
+  var versionCache = '-FireJak-20170719-11-30'
 
   // Load the sw-tookbox library.
-  importScripts('/chucknorris/sw/sw-toolbox.js');
+  importScripts('/FireJak/sw/sw-toolbox.js');
 
   // Turn on debug logging, visible in the Developer Tools' console.
   // global.toolbox.options.debug = true;
   toolbox.precache([
     '/index.html', 
-    '/static/images/chucknorris-logo.png', 
-    '/static/images/chucknorris-gif.gif', 
+    '/static/images/FireJak-logo.png', 
     '/static/images/loading.gif'
     ]);
 
-  toolbox.router.get('/chucknorris/sw/*', global.toolbox.cacheFirst, {
+  toolbox.router.get('/FireJak/sw/*', global.toolbox.cacheFirst, {
       cache: {
           name: 'serviceWorkerCacheVue' + versionCache,
           maxEntries: 200
       }
   });
-  toolbox.router.get('/chucknorris/**/*.{css}', global.toolbox.cacheFirst, {
+  toolbox.router.get('/FireJak/**/*.{css}', global.toolbox.cacheFirst, {
     cache: {
       name: 'staticCssCacheVue' + versionCache,
       maxEntries: 200
     }
   });
-  toolbox.router.get('/chucknorris/**/*.{js}', global.toolbox.cacheFirst, {
+  toolbox.router.get('/FireJak/**/*.{js}', global.toolbox.cacheFirst, {
     cache: {
       name: 'staticJsCacheVue' + versionCache,
       maxEntries: 200
@@ -39,7 +38,7 @@
       maxEntries: 200
     }
   });
-  toolbox.router.get('/chucknorris/(.*)', toolbox.cacheFirst, {
+  toolbox.router.get('/FireJak/(.*)', toolbox.cacheFirst, {
     cache: {
       name: 'staticOtherVue' + versionCache,
       maxEntries: 200
@@ -58,37 +57,14 @@
       maxEntries: 20,
     },
     origin: /\.cloudflare\.com$/
-  });  
-  toolbox.router.get('/(.*)', global.toolbox.cacheFirst, {
-    cache: {
-      name: 'chucknorris-assets',
-      maxEntries: 200,
-    },
-    origin: /\.assets\.chucknorris\.host$/
-  });
-  toolbox.router.get('/jokes/random?category=(.*)', global.toolbox.networkFirst, {
-    cache: {
-      name: 'chucknorris-api',
-      maxEntries: 500,
-      maxAgeSeconds: 518400,
-    },
-    origin: /\.api\.chucknorris\.io$/
-  });
-  toolbox.router.get('/jokes/random(.*)', global.toolbox.networkFirst, {
-    cache: {
-      name: 'chucknorris-api',
-      maxEntries: 500,
-      maxAgeSeconds: 518400,
-    },
-    origin: /\.api\.chucknorris\.io$/
   });
   toolbox.router.get('/(.*)', global.toolbox.cacheFirst, {
     cache: {
-      name: 'chucknorris-api',
+      name: 'jakarta-api',
       maxEntries: 200,
       maxAgeSeconds: 518400,
     },
-    origin: /\.api\.chucknorris\.io$/
+    origin: /\.api\.jakarta\.go\.id$/
   });
 
   // Boilerplate to ensure our service worker takes control of the page as soon as possible.
