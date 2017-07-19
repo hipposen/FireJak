@@ -37,5 +37,13 @@ jspm_packages
 .node_repl_history
 .idea/
 e2e
-dist
-apikey.conf
+src/
+test/
+build/
+config/
+dist/launcher
+dist/static
+dist/sw
+dist/sw.js
+dist/manifest.json
+dist/index*
