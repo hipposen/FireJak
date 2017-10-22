@@ -1,4 +1,4 @@
-# Contributing to Vue 2 Simplert
+# Contributing to FireJak
 
 Looking to contribute something? **Here's how you can help.**
 
